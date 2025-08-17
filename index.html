@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Você é um idiota?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #111;
+      color: white;
+    }
+    h1 {
+      margin-bottom: 40px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    #sim {
+      background: green;
+      color: white;
+    }
+    #nao {
+      background: red;
+      color: white;
+      position: absolute;
+    }
+    #resultado {
+      margin-top: 40px;
+      font-size: 20px;
+      color: #ff4d6d;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Você é um idiota?</h1>
+  
+  <button id="sim">Sim ✅</button>
+  <button id="nao">Não ❌</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    const botaoSim = document.getElementById("sim");
+    const botaoNao = document.getElementById("nao");
+    const resultado = document.getElementById("resultado");
+
+    botaoSim.addEventListener("click", () => {
+      resultado.textContent = "💔 Você admitiu que é um idiota! 😂";
+    });
+
+    botaoNao.addEventListener("mouseover", () => {
+      const largura = window.innerWidth - 100;
+      const altura = window.innerHeight - 50;
+      const x = Math.floor(Math.random() * largura);
+      const y = Math.floor(Math.random() * altura);
+
+      botaoNao.style.left = x + "px";
+      botaoNao.style.top = y + "px";
+    });
+  </script>
+</body>
+</html>
