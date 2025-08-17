@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Você é um idiota?</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.2s;
+      position: absolute;
+    }
+
+    #sim {
+      background-color: green;
+      color: white;
+      left: 40%;
+    }
+
+    #nao {
+      background-color: red;
+      color: white;
+      left: 55%;
+    }
+
+    #resultado {
+      margin-top: 80px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff4d4d;
+    }
+  </style>
+</head>
+<body>
+  <h1>Você é um idiota?</h1>
+
+  <button id="sim" class="btn">Sim ✅</button>
+  <button id="nao" class="btn">Não ❌</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    const simBtn = document.getElementById("sim");
+    const naoBtn = document.getElementById("nao");
+    const resultado = document.getElementById("resultado");
+
+    // Quando clicar em SIM
+    simBtn.addEventListener("click", () => {
+      resultado.innerHTML = "💔 Você admitiu que é um idiota! 😂";
+    });
+
+    // Quando tentar clicar em NÃO
+    naoBtn.addEventListener("mouseover", () => {
+      const largura = window.innerWidth - naoBtn.offsetWidth;
+      const altura = window.innerHeight - naoBtn.offsetHeight;
+
+      const x = Math.floor(Math.random() * largura);
+      const y = Math.floor(Math.random() * altura);
+
+      naoBtn.style.left = `${x}px`;
+      naoBtn.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
